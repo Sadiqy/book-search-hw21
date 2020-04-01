@@ -1,0 +1,33 @@
+{
+  "name": "book-search-hw21",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'book-search/*'\" \"npm run client\"",
+    "client": "cd book-search && npm run start",
+    "install": "cd book-search && npm install",
+    "build": "cd book-search && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sadiqy/book-search-hw21.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sadiqy/book-search-hw21/issues"
+  },
+  "homepage": "https://github.com/Sadiqy/book-search-hw21#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.9.7",
+    "path": "^0.12.7"
+  }
+}
